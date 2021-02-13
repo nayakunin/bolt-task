@@ -26,6 +26,11 @@
 
     width: 100%;
     height: 100%;
+
+    background: url('../images/bgimage_drivers.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .lead__image-container::before {
@@ -37,13 +42,6 @@
     content: '';
 
     background: rgba(0, 0, 0, .5);
-}
-
-.lead__image {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
 }
 
 @media (max-width: 1100px) {

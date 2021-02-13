@@ -1,6 +1,5 @@
 .logo {
     position: relative;
-    cursor: pointer;
 }
 
 .logo::before {
@@ -16,11 +15,13 @@
     background-position: center;
 }
 
-.logo__text {
+.logo__text,
+.logo__text:hover {
     font-weight: bold;
     font-size: 30px;
     letter-spacing: 2px;
     color: white;
+    text-decoration: none;
 }
 
 @media (max-width: 600px) {
