@@ -7,7 +7,7 @@
     <meta
       name="description"
       content="Drive with Taxify. Earn good money with your car. Sign up here if you a driver who would like to use Taxify platform."
-    >
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400|600|800"
@@ -43,8 +43,10 @@
           <button class="btn header__language">
             <i class="header__language-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508 508">
-                <defs/>
-                <path d="M254 0C147 0 0 81 0 254c0 169 141 254 254 254 194 0 254-170 254-254C508 130 413 0 254 0zm-59 24c-26 23-48 60-63 106-18-11-35-24-50-40 31-32 70-55 113-66zM71 102c17 18 36 33 57 45-8 30-12 64-13 99H17c1-53 21-103 54-144zm0 304c-33-41-53-91-54-144h98c1 36 5 69 13 99-21 12-40 27-57 45zm11 12c15-16 32-29 50-40 15 46 37 84 63 106-43-11-82-34-113-66zm164 73c-43-5-79-53-99-121 30-16 64-24 99-26v147zm0-163c-36 1-72 10-103 26-7-28-11-59-12-92h115v66zm0-82H131c1-33 5-64 11-92 33 16 68 25 104 26v66zm0-82c-35-2-69-10-99-26 20-68 56-116 99-121v147zm191-62c33 41 53 91 54 144h-98c0-36-5-69-13-99 21-12 40-27 57-45zm-11-12c-15 16-32 29-50 40-15-46-37-84-63-106 43 11 82 34 113 66zM262 17c43 5 79 53 99 121-30 16-64 24-99 26V17zm0 163c36-1 72-10 103-26 7 28 11 59 12 92H262v-66zm0 82h115c-1 33-5 64-12 92-31-16-67-25-103-26v-66zm0 229V344c35 2 69 10 99 26-19 68-56 116-99 121zm51-7c26-22 48-60 63-106 18 11 35 24 50 40-31 32-70 55-113 66zm124-78c-17-18-36-33-57-45 8-30 13-63 13-99h98c-1 53-21 103-54 144z"/>
+                <defs />
+                <path
+                  d="M254 0C147 0 0 81 0 254c0 169 141 254 254 254 194 0 254-170 254-254C508 130 413 0 254 0zm-59 24c-26 23-48 60-63 106-18-11-35-24-50-40 31-32 70-55 113-66zM71 102c17 18 36 33 57 45-8 30-12 64-13 99H17c1-53 21-103 54-144zm0 304c-33-41-53-91-54-144h98c1 36 5 69 13 99-21 12-40 27-57 45zm11 12c15-16 32-29 50-40 15 46 37 84 63 106-43-11-82-34-113-66zm164 73c-43-5-79-53-99-121 30-16 64-24 99-26v147zm0-163c-36 1-72 10-103 26-7-28-11-59-12-92h115v66zm0-82H131c1-33 5-64 11-92 33 16 68 25 104 26v66zm0-82c-35-2-69-10-99-26 20-68 56-116 99-121v147zm191-62c33 41 53 91 54 144h-98c0-36-5-69-13-99 21-12 40-27 57-45zm-11-12c-15 16-32 29-50 40-15-46-37-84-63-106 43 11 82 34 113 66zM262 17c43 5 79 53 99 121-30 16-64 24-99 26V17zm0 163c36-1 72-10 103-26 7 28 11 59 12 92H262v-66zm0 82h115c-1 33-5 64-12 92-31-16-67-25-103-26v-66zm0 229V344c35 2 69 10 99 26-19 68-56 116-99 121zm51-7c26-22 48-60 63-106 18 11 35 24 50 40-31 32-70 55-113 66zm124-78c-17-18-36-33-57-45 8-30 13-63 13-99h98c-1 53-21 103-54 144z"
+                />
               </svg>
             </i>
             <span class="header__language-text">English</span>
@@ -84,15 +86,31 @@
               Will be&nbsp;using as&nbsp;your username
             </small>
           </div>
+          <!--
+            In my opinion using these inputs for a phone number is a bad practice.
+            It breaks browser's autofilling mechanism. I think a single input[type:tel]
+            wihtout separete locale selector/input and without masks works better.
+          -->
           <div class="form-group form__fieldset">
             <label for="phone" class="form__label">Phone</label>
-            <input
-              id="phone"
-              type="tel"
-              name="phone"
-              class="form-control form-control-lg form__input"
-              required
-            />
+            <div class="form__input-group form__input-group_phone js-phone-input-group">
+              <input
+                id="prefix"
+                type="text"
+                name="prefix"
+                pattern="\d+"
+                class="form-control form-control-lg form__input form__input-prefix"
+                required
+              />
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                pattern="\d{10}"
+                class="form-control form-control-lg form__input"
+                required
+              />
+            </div>
           </div>
           <div class="form-group form__fieldset">
             <label for="city" class="form__label">City</label>
@@ -105,13 +123,7 @@
             />
           </div>
           <div
-            class="
-              form-group
-              form__fieldset
-              form__fieldset_terms
-              custom-control
-              custom-checkbox
-            "
+            class="form-group form__fieldset form__fieldset_terms custom-control custom-checkbox"
           >
             <input
               type="checkbox"
@@ -121,17 +133,11 @@
             />
             <label class="form__check-label" for="accept-terms">
               By&nbsp;signing&nbsp;up, you accept our
-              <a
-                href="/"
-                class="form__link form__link_terms"
-              >
+              <a href="/" class="form__link form__link_terms">
                 Terms of&nbsp;service
               </a>
               and
-              <a
-                href="/"
-                class="form__link form__link_terms"
-              >
+              <a href="/" class="form__link form__link_terms">
                 Privacy Policy
               </a>
             </label>
@@ -141,10 +147,13 @@
             Have multiple cars and drivers?
           </p>
           <p class="form__fleet-text form__fleet-link-container">
-            <a class="form__fleet-link" href="/">Signup as&nbsp;a&nbsp;fleet owner</a>
+            <a class="form__fleet-link" href="/"
+              >Signup as&nbsp;a&nbsp;fleet owner</a
+            >
           </p>
         </form>
       </article>
     </main>
+    <script src="index.js"></script>
   </body>
 </html>
