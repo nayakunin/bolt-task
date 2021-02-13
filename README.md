@@ -3,7 +3,7 @@
 
 Github pages: https://nayakunin.github.io/bolt-task/
 
-index.html:95
+`index.html:95`
 ```
 In my opinion using these inputs for a phone number is a bad practice.
 It breaks browser's autofilling mechanism. I think a single input[type:tel]
