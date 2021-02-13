@@ -1,0 +1,34 @@
+.logo {
+    position: relative;
+    cursor: pointer;
+}
+
+.logo::before {
+    position: absolute;
+    right: -14px;
+    top: -16px;
+    content: '';
+    width: 21px;
+    height: 21px;
+    background: url('../images/taxify_logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo__text {
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .logo__text {
+        color: black;
+    }
+
+    .logo::before {
+        background-image: url('../images/taxify_logo_black.svg');
+    }
+}

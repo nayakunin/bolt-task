@@ -1,0 +1,141 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 26%;
+
+    min-height: 100vh;
+}
+
+.form__form {
+    width: 100%;
+}
+
+.form__fieldset {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.form__title {
+    font-size: 32px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form__text {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.form__text_small {
+    font-size: 13px;
+}
+
+.form__input {
+    height: 45px;
+}
+
+.form__label {
+    margin-bottom: 5px;
+}
+
+.form__fieldset_terms {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.form__check-label::before {
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    text-align: center;
+    vertical-align: center;
+    line-height: 18px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form__check:checked + .form__check-label::before {
+    border: none;
+    background: #11d72fc1;
+    color: white;
+    content: '\2713';
+}
+
+.form__check:focus + .form__check-label::before {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.form__check:checked.form__check:focus + .form__check-label::before {
+    box-shadow: none;
+}
+
+.form__check {
+    width: 20px;
+    height: 20px;
+}
+
+.form__check-label {
+    font-size: 14px;
+    margin-left: 10px;
+    color: var(--gray);
+}
+
+.form__link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.form__submit {
+    background-color: #11d72fc1;
+    color: white;
+    width: 100%;
+    text-transform: uppercase;
+    height: 45px;
+    margin-bottom: 5px;
+}
+
+.form__submit:hover, .form__submit:focus {
+    color: white;
+    background-color: #10c42bc1;
+}
+
+.form__fleet-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form__fleet-link, .form__fleet-link:hover {
+    color: #11d72fc1;
+}
+
+@media (max-width: 600px) {
+    .form {
+        padding: 90px 6% 0;
+    }
+
+    .form__fieldset {
+        margin-bottom: 25px;
+    }
+
+    .form__title {
+        font-size: 37px;
+        margin-bottom: 25px;
+    }
+
+    .form__text {
+        margin-bottom: 25px;
+    }
+}
